@@ -4,4 +4,7 @@ class UserController < ApplicationController
 
   def log_in
   end
+
+  def register
+  end
 end

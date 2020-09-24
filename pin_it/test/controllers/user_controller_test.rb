@@ -11,4 +11,9 @@ class UserControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get register" do
+    get user_register_url
+    assert_response :success
+  end
+
 end
