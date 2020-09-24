@@ -74,3 +74,69 @@ Processing by UserController#new as HTML
 Completed 200 OK in 17ms (Views: 16.4ms)
 
 
+Started GET "/user/new" for 127.0.0.1 at 2020-09-24 14:49:10 +0200
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 5ms
+
+
+  
+ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.
+):
+    3:   <head>
+    4:     <title>PinIt</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag 'application', media: 'all'%>
+    7: 
+    8:   </head>
+    9: 
+  
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2151135871360521656_70184502095220'
+Started GET "/user/new" for 127.0.0.1 at 2020-09-24 14:49:17 +0200
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 5ms
+
+
+  
+ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.
+):
+    3:   <head>
+    4:     <title>PinIt</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag 'application', media: 'all'%>
+    7: 
+    8:   </head>
+    9: 
+  
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2151135871360521656_70184541123000'
+Started GET "/user/new" for 127.0.0.1 at 2020-09-24 14:51:00 +0200
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 12.8ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2020-09-24 14:51:07 +0200
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1280ms (Views: 1279.1ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2020-09-24 14:51:13 +0200
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 810ms (Views: 809.6ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2020-09-24 14:51:15 +0200
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 4.5ms)
+
+
