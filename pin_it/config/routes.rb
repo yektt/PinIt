@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'account/pins'
+
   get 'application/about'
 
   root to: 'home#index'
