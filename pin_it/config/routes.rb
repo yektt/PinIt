@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'pins/edit'
+
+  get 'pins/index'
+
+  get 'pins/new'
+
+  get 'pins/show'
+
   get 'account/pins'
 
   get 'application/about'
