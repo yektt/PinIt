@@ -1,2 +1,50 @@
-<h1>Pins#show</h1>
-<p>Find me in app/views/pins/show.html.erb</p>
+<main>
+  <div class="container mt-5">
+    <div class="card d-flex mb-4 shadow-sm h-md-250">
+      <div class="d-flex flex-row justify-content-start">
+        <img class="img-fluid" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="http://fpoimg.com/300x250?text=Medium%20Rectangle" data-holder-rendered="true">
+        <div>
+          <div class="card-body d-flex flex-column align-items-start">
+            <h3 class="mb-0">
+              <a class="text-dark" href="#">Pin title</a>
+            </h3>
+            <div class="mb-1 text-muted">Date here</div>
+              <p class="card-text mb-auto">Tags here.</p>
+              <h3>creator</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <%# comments section here%>
+  </div>
+</main>
+
+
+<%# <div class="card">
+  <div class="card__thumb">
+    <%= link_to(idea_path(idea)) do 
+      <%= render( partial: 'idea_photo', locals: { photo_url: photo_url }) 
+    <% end 
+    <div class="card__intro">
+          <h4 class="card__title"><%= card_title </h4>
+          <span><%= done_count have done this</span>
+        </div>
+      </div>
+      <div class="card__footer">
+        <button class="card__btn card__like delta" data-like="see-the-northern-lights">
+          <svg class="icon-heart icon-heart--liked" role="presentation">
+            <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart" ) "></use>
+          </svg>
+          Like
+        </button>
+        <button class="card__btn card__add delta" data-addGoal="see-the-northern-lights">
+          <svg class="icon-pluss" role="presentation">
+            <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pluss" ) "></use>
+          </svg>
+          Add Goal
+        </button>
+      </div>
+    </div> %>
