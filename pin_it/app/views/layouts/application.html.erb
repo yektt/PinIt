@@ -22,16 +22,12 @@
               
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <%= link_to('Home', root_path, class:'nav-link') %>
+            </li>
             <%= render(partial:'nav_item', locals:{ title:'Register', uri: user_register_path }) %>
-            <li class="nav-item">
-              <%= link_to('Register', user_register_path, class:'nav-link') %>
-            </li>            
-            <li class="nav-item">
-              <%= link_to('Log in', user_log_in_path, class:'nav-link') %>
-            </li>
-            <li class="nav-item">
-              <%= link_to('My Pins', account_pins_path, class:'nav-link') %>
-            </li>
+            <%= render(partial:'nav_item', locals:{ title:'Log in', uri: user_log_in_path }) %>
+            <%= render(partial:'nav_item', locals:{ title:'My Pins', uri: account_pins_path }) %>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>
