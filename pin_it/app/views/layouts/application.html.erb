@@ -17,11 +17,12 @@
         </nav>
         
         <%= link_to('PIN-IT', root_path, class:'navbar-brand') %>
+
+
+              
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <%= link_to('Home', root_path, class:'nav-link') %>
-            </li>
+            <%= render(partial:'nav_item', locals:{ title:'Register', uri: user_register_path }) %>
             <li class="nav-item">
               <%= link_to('Register', user_register_path, class:'nav-link') %>
             </li>            
