@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
-  def home
+  def index
+    @pins = Pin.all
   end
 end
