@@ -1,8 +1,8 @@
 <main>
    <div class="container mt-5">
-     <h1>Create new idea</h1>
+     <h1>Create new pin</h1>
      
-     <form class="form-group mt-5">
+     <%= form_tag(pins_create_path, class: 'form-group mt-5') do %>
       <label for="inputTitle" class="sr-only">Title</label>
       <input type="text" id="inputTitle" class="form-control" placeholder="Title" autofocus="">
       <label for="inputTag" class="sr-only">Tag</label>
@@ -14,5 +14,6 @@
       </div>
       <%= render(partial: 'primary_button', locals: { label: 'Create Pin' }) %>
     </form>
+    <% end %>
    </div>
  </main>
