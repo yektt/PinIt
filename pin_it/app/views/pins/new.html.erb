@@ -8,8 +8,8 @@
       <label for="inputTag" class="sr-only">Tag</label>
       <%= text_field_tag('inputTag', nil, class:'form-control mt-3', placeholder: 'Tags here') %>
       
-      <%= text_field_tag('inputImage', nil, class:'input-group__field mt-4', type:'file') %>
-      <small id="emailHelp" class="form-text text-muted pl-1">If you want, you can add an image for the pin here.</small>
+      <%= text_field_tag('inputImageUrl', nil, class:'form-control mt-3', placeholder: 'Image URL here') %>
+      <small id="infoHelp" class="form-text text-muted pl-1">If you want, you can add an image for the pin here.</small>
       <%= button_tag('Create Pin', class: 'btn btn-lg btn-primary btn-block mt-5') %>
     </form>
     <% end %>
