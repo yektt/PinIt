@@ -8,6 +8,8 @@ class PinsController < ApplicationController
     else
       @search_term = params[:q]
     end
+
+    @pins = Pin.all
   end
 
   def new
