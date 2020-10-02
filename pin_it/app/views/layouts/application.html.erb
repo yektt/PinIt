@@ -4,7 +4,6 @@
     <title>PIN-IT</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all'%>
-
   </head>
 
   <body>
@@ -18,17 +17,12 @@
         
         <%= link_to('PIN-IT', root_path, class:'navbar-brand') %>
 
-
-              
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <%= render(partial:'nav_item', locals:{ title:'Home', uri: root_path }) %>
-            <%= render(partial:'nav_item', locals:{ title:'Register', uri: user_register_path }) %>
-            <%= render(partial:'nav_item', locals:{ title:'Log in', uri: user_log_in_path }) %>
-            <%= render(partial:'nav_item', locals:{ title:'My Pins', uri: account_pins_path }) %>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
+            <%= render(partial:'nav_item', locals:{ footer: false, title:'Home', uri: root_path }) %>
+            <%= render(partial:'nav_item', locals:{ footer: false, title:'Register', uri: user_register_path }) %>
+            <%= render(partial:'nav_item', locals:{ footer: false, title:'Log in', uri: user_log_in_path }) %>
+            <%= render(partial:'nav_item', locals:{ footer: false, title:'My Pins', uri: account_pins_path }) %>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -37,6 +31,7 @@
         </div>
       </nav>
     </header>
+
     <%= yield %>
     
     <footer class="footer">
@@ -51,12 +46,8 @@
           <%= link_to('PIN-IT', root_path, class:'navbar-brand') %>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <%= link_to('Home', root_path, class:'nav-link') %>
-              </li>
-              <li class="nav-item">
-                <%= link_to('About', application_about_path, class:'nav-link') %>
-              </li>
+              <%= render(partial:'nav_item', locals:{ footer: true, title:'Home', uri: root_path }) %>
+              <%= render(partial:'nav_item', locals:{ footer: true, title:'About', uri: application_about_path }) %>
             </ul>
             <a class="text-right text-muted">Built by Yekta Turan</a>
           </div>
@@ -65,5 +56,3 @@
     </footer>
   </body>
 </html>
-
-

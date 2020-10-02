@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: 'home#index'
+
   get 'pins/edit'
 
   get 'pins/index'
@@ -11,8 +13,6 @@ Rails.application.routes.draw do
   get 'account/pins'
 
   get 'application/about'
-
-  root to: 'home#index'
   
   get 'home/index'
 
