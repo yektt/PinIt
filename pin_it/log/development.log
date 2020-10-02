@@ -28524,3 +28524,4 @@ Migrating to CreatePins (20201002131628)
   [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPin Load (3.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" LIMIT ?[0m  [["LIMIT", 11]]
