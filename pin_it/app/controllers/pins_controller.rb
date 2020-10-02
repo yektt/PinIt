@@ -23,11 +23,20 @@ class PinsController < ApplicationController
   end
 
   def show
+    
   end
 
   def edit
+    id = params[:id]
+    @pin = Pin.find(id)
   end
 
   def update
+    pin = Pin.find(params[:id])
+    pin.title = params[:inputTitle]
+    pin.tag = params[:inputTag]
+    pin.image_url = params[:inputImageUrl]
+    pin.save!
+    redirect_to account_pins_path
   end
 end
