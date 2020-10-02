@@ -16,6 +16,11 @@ class PinsController < ApplicationController
   end
 
   def create
+    pin = Pin.new
+    pin.title = params[:inputTitle]
+    pin.tag = params[:inputTag]
+    pin.image_url = params[:inputImageUrl]
+    pin.save!
     redirect_to pins_index_path
   end
 
