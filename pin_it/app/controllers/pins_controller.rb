@@ -3,7 +3,7 @@ class PinsController < ApplicationController
   end
 
   def index
-    if (params[:q].empty?)
+    if (params[:q].nil? || params[:q].empty?)
       @search_term = "everything"
     else
       @search_term = params[:q]
@@ -14,6 +14,7 @@ class PinsController < ApplicationController
   end
 
   def create
+    redirect_to pins_index_path
   end
 
   def show
