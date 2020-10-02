@@ -3,7 +3,11 @@ class PinsController < ApplicationController
   end
 
   def index
-    @search_term = params[:q] 
+    if (params[:q].empty?)
+      @search_term = "everything"
+    else
+      @search_term = params[:q]
+    end
   end
 
   def new
