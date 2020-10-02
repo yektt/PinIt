@@ -3,6 +3,7 @@ class PinsController < ApplicationController
   end
 
   def index
+    @search_term = params[:q] 
   end
 
   def new
