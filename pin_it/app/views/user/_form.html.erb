@@ -4,8 +4,8 @@
   <input type="email" id="inputEmail" class="form-control mt-5" placeholder="Email address" required="" autofocus="">
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="inputPassword" class="form-control mt-3" placeholder="Password" required="">
-  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   <% if( label.downcase.include? "create") %>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     <label for="inputImage" class="sr-only">Avatar Picture</label>
     <input type="file" id="inputImage" class="form-control mt-3">
   <% end %>
