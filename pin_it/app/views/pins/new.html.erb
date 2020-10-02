@@ -4,15 +4,13 @@
      
      <%= form_tag(pins_create_path, class: 'form-group mt-5') do %>
       <label for="inputTitle" class="sr-only">Title</label>
-      <input type="text" id="inputTitle" class="form-control" placeholder="Title" autofocus="">
+      <%= text_field_tag('inputTitle', nil, class:'form-control', placeholder:'Title here') %>
       <label for="inputTag" class="sr-only">Tag</label>
-      <input type="text" id="inputTag" class="form-control mt-3" placeholder="Tag">
+      <%= text_field_tag('inputTag', nil, class:'form-control mt-3', placeholder: 'Tags here') %>
       
-      <div class="d-flex justify-content-start mt-3">
-        <label>Pin image</label>
-        <input type="file" id="inputImage" class="input-group__field pl-3">
-      </div>
-      <%= render(partial: 'primary_button', locals: { label: 'Create Pin' }) %>
+      <%= text_field_tag('inputImage', nil, class:'input-group__field mt-4', type:'file') %>
+      <small id="emailHelp" class="form-text text-muted pl-1">If you want, you can add an image for the pin here.</small>
+      <%= button_tag('Create Pin', class: 'btn btn-lg btn-primary btn-block mt-5') %>
     </form>
     <% end %>
    </div>
