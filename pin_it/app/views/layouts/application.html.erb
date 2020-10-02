@@ -18,10 +18,10 @@
               <%= render(partial:'nav_item', locals:{ footer: false, title:'Log in', uri: user_log_in_path }) %>
               <%= render(partial:'nav_item', locals:{ footer: false, title:'My Pins', uri: account_pins_path }) %>
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
+            <%= form_tag(pins_index_path, method: 'GET', class: 'form-inline mt-2 mt-md-0') do %>
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <%= link_to('Search', pins_index_path , class:'btn btn-outline-primary my-2 my-sm-0') %>
-            </form>
+              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            <% end %>
           </div>
         </div>
       </nav>
