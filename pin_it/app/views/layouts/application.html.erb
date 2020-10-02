@@ -19,8 +19,8 @@
               <%= render(partial:'nav_item', locals:{ footer: false, title:'My Pins', uri: account_pins_path }) %>
             </ul>
             <%= form_tag(pins_index_path, method: 'GET', class: 'form-inline mt-2 mt-md-0') do %>
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+              <%= text_field_tag('q', nil, class: 'form-control mr-sm-2', placeholder: 'Search') %>
+              <%= button_tag('Search', class: 'btn btn-outline-primary my-2 my-sm-0') %>
             <% end %>
           </div>
         </div>
