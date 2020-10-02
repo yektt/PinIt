@@ -2,17 +2,14 @@
    <div class="container mt-5">
      <h1>Edit pin</h1>
      
-     <form class="form-group mt-5">
+     <%= form_tag(pin_path(@pin), method:'PATCH', class: 'form-group mt-5') do %>
       <label for="inputTitle" class="sr-only">Title</label>
-      <input type="text" id="inputTitle" class="form-control" placeholder="Title" autofocus="">
+      <%= text_field_tag('inputTitle', @pin.title, class:'form-control', placeholder:'Title here') %>
       <label for="inputTag" class="sr-only">Tag</label>
-      <input type="text" id="inputTag" class="form-control mt-3" placeholder="Tag">
+      <%= text_field_tag('inputTag', @pin.tag, class:'form-control mt-3', placeholder: 'Tags here') %>
       
-      <div class="d-flex justify-content-start mt-3">
-        <label>Pin image</label>
-        <input type="file" id="inputImage" class="input-group__field pl-3">
-      </div>
-      <%= render(partial: 'primary_button', locals: { label: 'Edit Pin' }) %>
-    </form>
+      <%= text_field_tag('inputImageUrl', @pin.image_url, class:'form-control mt-3', placeholder: 'Image URL here') %>
+      <%= button_tag('Create Pin', class: 'btn btn-lg btn-primary btn-block mt-5') %>
+    <% end %>
    </div>
  </main>
