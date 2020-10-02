@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'pins/show'
 
+  post 'pins/create'
+
   get 'account/pins'
 
   get 'application/about'
