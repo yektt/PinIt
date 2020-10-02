@@ -7,10 +7,10 @@
 
     <div class="container">
       <ul class="row mt-5">
-        <% ['title1', 'title2', 'title3', 'title4'].each do |title|%>
+        <% @pins.each do |pin|%>
           <li class="list-unstyled col-md-4 col-sm-6">
             <div class="col mb-4">
-              <%= render(partial: 'pin_card', locals:{ card_title: title }) %>
+              <%= render(partial: 'pin_card', locals:{ pin: pin }) %>
             </div>
           </li>
         <% end %>
