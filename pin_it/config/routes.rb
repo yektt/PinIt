@@ -2,17 +2,17 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  get 'pins/:id/edit', to: 'pins#edit', as: 'edit_pin'
-
-  patch 'pins/:id/update', to: 'pins#update', as: 'pin'
-
   get 'pins/index'
 
   get 'pins/new'
 
-  get 'pins/show'
-
   post 'pins/create'
+
+  get 'pins/:id/edit', to: 'pins#edit', as: 'edit_pin'
+
+  patch 'pins/:id', to: 'pins#update', as: 'pin'
+
+  get 'pins/:id', to: 'pins#show', as: 'show_pin'
 
   get 'account/pins'
 
