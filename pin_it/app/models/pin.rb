@@ -5,6 +5,6 @@ class Pin < ApplicationRecord
   end
 
   def self.search(search_term)
-    where('title LIKE ?', "%#{search_term}%")
+    where('title LIKE ?', "%#{search_term}%").or(where('tag LIKE ?', "%#{search_term}%"))
   end
 end
