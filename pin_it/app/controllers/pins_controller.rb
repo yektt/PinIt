@@ -3,11 +3,13 @@ class PinsController < ApplicationController
   def index
     if (params[:q].nil? || params[:q].empty?)
       @search_term = "everything"
+      @pins = Pin.all
     else
       @search_term = params[:q]
+      @pins = Pin.where('title LIKE ?', "%#{@search_term}%")
     end
 
-    @pins = Pin.all
+    
   end
 
   def new
