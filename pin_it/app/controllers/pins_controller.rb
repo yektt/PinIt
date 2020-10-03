@@ -6,7 +6,7 @@ class PinsController < ApplicationController
       @pins = Pin.all
     else
       @search_term = params[:q]
-      @pins = Pin.where('title LIKE ?', "%#{@search_term}%")
+      @pins = Pin.search(@search_term)
     end
 
     
