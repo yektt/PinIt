@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @pins = Pin.all
+    @pins = Pin.most_recent()
   end
 end
