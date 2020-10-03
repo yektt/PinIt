@@ -23,7 +23,8 @@ class PinsController < ApplicationController
   end
 
   def show
-    
+    id = params[:id]
+    @pin = Pin.find(id)
   end
 
   def edit
