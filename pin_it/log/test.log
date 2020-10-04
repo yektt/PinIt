@@ -1,0 +1,108 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pins"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "pins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "tag" varchar, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201002131628)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200924142037);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-10-04 19:53:43.150560"], ["updated_at", "2020-10-04 19:53:43.150560"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+PinsTest: test_create_new_pin
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+PinsTest: test_create_new_pin
+-----------------------------
+Started GET "/pins" for 127.0.0.1 at 2020-10-04 21:54:31 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered pins/index.html.erb within layouts/application (5.2ms)
+  Rendered application/_nav_item.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 1897ms (Views: 1888.4ms | ActiveRecord: 0.4ms)
+Started GET "/assets/application-d344d35d43b647e676b1559a0d58f7ab9296c21dbb8c39e98f0440823bcc0746.css" for 127.0.0.1 at 2020-10-04 21:54:33 +0200
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+PinsTest: test_create_new_pin
+-----------------------------
+Started GET "/pins/new" for 127.0.0.1 at 2020-10-04 21:58:07 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/new.html.erb within layouts/application (1.7ms)
+  Rendered application/_nav_item.html.erb (0.6ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+Completed 200 OK in 235ms (Views: 230.7ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application-d344d35d43b647e676b1559a0d58f7ab9296c21dbb8c39e98f0440823bcc0746.css" for 127.0.0.1 at 2020-10-04 21:58:07 +0200
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+PinsTest: test_create_new_pin
+-----------------------------
+Started GET "/pins/new" for 127.0.0.1 at 2020-10-04 21:58:22 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/new.html.erb within layouts/application (1.6ms)
+  Rendered application/_nav_item.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 135ms (Views: 130.5ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application-d344d35d43b647e676b1559a0d58f7ab9296c21dbb8c39e98f0440823bcc0746.css" for 127.0.0.1 at 2020-10-04 21:58:22 +0200
+Started POST "/pins" for 127.0.0.1 at 2020-10-04 21:58:23 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"Finish all mangas", "tag"=>"manga all mangas read", "image_url"=>"http://fpoimg.com/255x170", "button"=>""}
+Unpermitted parameters: :utf8, :button
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Finish all mangas"], ["tag", "manga all mangas read"], ["image_url", "http://fpoimg.com/255x170"], ["created_at", "2020-10-04 19:58:23.324310"], ["updated_at", "2020-10-04 19:58:23.324310"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:58888/pins
+Completed 302 Found in 11ms (ActiveRecord: 1.1ms)
+Started GET "/pins" for 127.0.0.1 at 2020-10-04 21:58:23 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (3.2ms)
+  Rendered pins/index.html.erb within layouts/application (9.7ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
