@@ -25,6 +25,18 @@ class PinsTest < ApplicationSystemTestCase
     assert page.has_content?('Start writing a little anime')
   end
 
+  test 'editing a pin' do
+    pin = Pin.new title: 'pin title'
+    pin.save!
+    visit(edit_pin_path(pin))
+    fill_in('tag', with:'tags of the pin')
+    fill_in('title', with:'new pin title')
+  
+    click_on('Update Pin')
+    click_on('new pin title')
+    
+    assert page.has_content?('new pin title')
+    assert page.has_content?('tags of the pin')
+  end
+
 end
-
-
