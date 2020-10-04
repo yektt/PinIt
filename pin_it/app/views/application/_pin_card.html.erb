@@ -1,5 +1,5 @@
 <div class="card">
-  <%= link_to(show_pin_path(Pin.find(pin.id))) do %>
+  <%= link_to(pin_path(Pin.find(pin.id))) do %>
     <% if(pin.image_url.nil? || pin.image_url == "") %>
       <img src="http://fpoimg.com/255x170" class="card-img-top" alt="...">
     <% else %>

@@ -18,7 +18,7 @@ class PinsController < ApplicationController
   def create
     pin = Pin.new(pins_params)
     pin.save!
-    redirect_to pins_index_path
+    redirect_to pins_path
   end
 
   def show

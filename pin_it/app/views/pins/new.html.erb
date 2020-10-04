@@ -2,7 +2,7 @@
    <div class="container mt-5">
      <h1>Create new pin</h1>
      
-     <%= form_tag(pins_create_path, class: 'form-group mt-5') do %>
+     <%= form_tag(pins_path, class: 'form-group mt-5') do %>
       <label for="title" class="sr-only">Title</label>
       <%= text_field_tag('title', nil, class:'form-control', placeholder:'Title here') %>
       <label for="tag" class="sr-only">Tag</label>
