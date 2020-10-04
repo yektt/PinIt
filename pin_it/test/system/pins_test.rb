@@ -63,6 +63,22 @@ class PinsTest < ApplicationSystemTestCase
     assert page.has_content?('No pins found!')
   end
 
+  test 'home_page highlights' do
+    7.times do |i|
+      pin = Pin.new title: "pin title #{i+1}"
+      pin.save!
+    end
+
+    visit (root_path)
+    assert page.has_content?('pin title 7')
+    assert page.has_content?('pin title 6')
+    assert page.has_content?('pin title 5')
+    assert page.has_content?('pin title 4')
+    assert page.has_content?('pin title 3')
+    assert page.has_content?('pin title 2')
+    refute page.has_content?('pin title 1')    
+  end
+
 end
 
 
