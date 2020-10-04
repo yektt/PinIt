@@ -39,4 +39,25 @@ class PinsTest < ApplicationSystemTestCase
     assert page.has_content?('tags of the pin')
   end
 
+  test 'search' do
+    pin_1 = Pin.new
+    pin_1.title = 'Do something with clay'
+    pin_1.save!
+  
+    pin_2 = Pin.new
+    pin_2.title = 'Finish Witcher III again'
+    pin_2.save!
+  
+    visit(root_path)
+    fill_in('q', with:'with')
+  
+    click_on('Search', match: :first)
+    
+    assert current_path.include?(pins_path)
+    assert page.has_content?('Do something with clay')
+    refute page.has_content?('Finish Witcher III again')
+  end
+
 end
+
+
