@@ -58,6 +58,11 @@ class PinsTest < ApplicationSystemTestCase
     refute page.has_content?('Finish Witcher III again')
   end
 
+  test 'no search results' do
+    visit (pins_path)
+    assert page.has_content?('No pins found!')
+  end
+
 end
 
 
