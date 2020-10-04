@@ -11,4 +11,20 @@ class PinsTest < ApplicationSystemTestCase
     assert page.has_content?('Finish all mangas')
   end
 
+  test 'index loads pins' do
+    pin_1 = Pin.new
+    pin_1.title = 'Learn how to draw anime characters'
+    pin_1.save!
+  
+    pin_2 = Pin.new
+    pin_2.title = 'Start writing a little anime'
+    pin_2.save!
+  
+    visit (pins_path)
+    assert page.has_content?('Learn how to draw anime characters')
+    assert page.has_content?('Start writing a little anime')
+  end
+
 end
+
+
