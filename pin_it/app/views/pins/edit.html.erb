@@ -3,12 +3,12 @@
      <h1>Edit pin</h1>
      
      <%= form_tag(pin_path(@pin), method:'PATCH', class: 'form-group mt-5') do %>
-      <label for="inputTitle" class="sr-only">Title</label>
-      <%= text_field_tag('inputTitle', @pin.title, class:'form-control', placeholder:'Title here') %>
-      <label for="inputTag" class="sr-only">Tag</label>
-      <%= text_field_tag('inputTag', @pin.tag, class:'form-control mt-3', placeholder: 'Tags here') %>
-      
-      <%= text_field_tag('inputImageUrl', @pin.image_url, class:'form-control mt-3', placeholder: 'Image URL here') %>
+      <label for="title" class="sr-only">Title</label>
+      <%= text_field_tag('title', @pin.title, class:'form-control', placeholder:'Title here') %>
+      <label for="tag" class="sr-only">Tag</label>
+      <%= text_field_tag('tag', @pin.tag, class:'form-control mt-3', placeholder: 'Tags here') %>
+      <label for="image_url" class="sr-only">Title</label>
+      <%= text_field_tag('image_url', @pin.image_url, class:'form-control mt-3', placeholder: 'Image URL here') %>
       <%= button_tag('Update Pin', class: 'btn btn-lg btn-primary btn-block mt-5') %>
     <% end %>
    </div>

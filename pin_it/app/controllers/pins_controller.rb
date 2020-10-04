@@ -16,10 +16,7 @@ class PinsController < ApplicationController
   end
 
   def create
-    pin = Pin.new
-    pin.title = params[:inputTitle]
-    pin.tag = params[:inputTag]
-    pin.image_url = params[:inputImageUrl]
+    pin = Pin.new(pins_params)
     pin.save!
     redirect_to pins_index_path
   end
@@ -36,10 +33,13 @@ class PinsController < ApplicationController
 
   def update
     pin = Pin.find(params[:id])
-    pin.title = params[:inputTitle]
-    pin.tag = params[:inputTag]
-    pin.image_url = params[:inputImageUrl]
-    pin.save!
+    pin.update(pins_params)
     redirect_to account_pins_path
+  end
+
+  private
+
+  def pins_params
+    params.permit(:title, :tag, :image_url)
   end
 end

@@ -3,12 +3,12 @@
      <h1>Create new pin</h1>
      
      <%= form_tag(pins_create_path, class: 'form-group mt-5') do %>
-      <label for="inputTitle" class="sr-only">Title</label>
-      <%= text_field_tag('inputTitle', nil, class:'form-control', placeholder:'Title here') %>
-      <label for="inputTag" class="sr-only">Tag</label>
-      <%= text_field_tag('inputTag', nil, class:'form-control mt-3', placeholder: 'Tags here') %>
-      
-      <%= text_field_tag('inputImageUrl', nil, class:'form-control mt-3', placeholder: 'Image URL here') %>
+      <label for="title" class="sr-only">Title</label>
+      <%= text_field_tag('title', nil, class:'form-control', placeholder:'Title here') %>
+      <label for="tag" class="sr-only">Tag</label>
+      <%= text_field_tag('tag', nil, class:'form-control mt-3', placeholder: 'Tags here') %>
+      <label for="image_url" class="sr-only">Imaga URL</label>
+      <%= text_field_tag('image_url', nil, class:'form-control mt-3', placeholder: 'Image URL here') %>
       <small id="infoHelp" class="form-text text-muted pl-1">If you want, you can add an image for the pin here.</small>
       <%= button_tag('Create Pin', class: 'btn btn-lg btn-primary btn-block mt-5') %>
     <% end %>
