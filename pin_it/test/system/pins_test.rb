@@ -79,6 +79,28 @@ class PinsTest < ApplicationSystemTestCase
     refute page.has_content?('pin title 1')    
   end
 
+  test 'search by description and title' do
+    pin_1 = Pin.new title: 'Buy a new phone',
+                    tag: 'iphone samsung android ios'
+    pin_1.save!
+
+    pin_2 = Pin.new title: 'Make camp',
+                    tag: 'camp sunset sunrise lake'
+    pin_2.save!
+
+    pin_3 = Pin.new title: 'Swim in the lake Leman',
+                    tag: 'swim evian lausanne'
+    pin_3.save!
+
+    visit(root_path)
+    fill_in('q',with: 'lake')
+    click_on('Search',match: :first)
+
+    assert page.has_content?('Make camp')
+    assert page.has_content?('Swim in the lake Leman')
+    refute page.has_content?('Buy a new phoned')
+  end
+
 end
 
 
