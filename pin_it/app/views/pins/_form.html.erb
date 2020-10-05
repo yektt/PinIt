@@ -1,0 +1,12 @@
+<%= form_for(pin, html: {class:'form-group mt-5'}) do |form| %>
+  <%= form.label(:title, class:'sr-only') %>
+  <%= form.text_field(:title, class:'form-control', placeholder:'Title here') %>
+
+  <%= form.label(:tag, class:'sr-only') %>
+  <%= form.text_field(:tag, class:'form-control mt-3', placeholder: 'Tags here') %>
+
+  <%= form.label(:image_url, class:'sr-only') %>
+  <%= form.text_field(:image_url, class:'form-control mt-3', placeholder: 'Image URL here') %>
+  
+  <%= form.submit(class:'btn btn-lg btn-primary btn-block mt-5') %>
+<% end %>
