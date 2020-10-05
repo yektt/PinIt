@@ -1592,3 +1592,156 @@ PinTest: test_changing_the_title
   [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "title" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["title", "new title of the pin"], ["updated_at", "2020-10-05 10:54:58.859083"], ["id", 1]]
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+PinTest: test_changing_the_title
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title of the pin"], ["created_at", "2020-10-05 10:56:53.908278"], ["updated_at", "2020-10-05 10:56:53.908278"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "pins" SET "title" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["title", "new title of the pin"], ["updated_at", "2020-10-05 10:56:53.910789"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+PinTest: test_updated_at_is_changed_after_updating_image_url
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "pins" ("title", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title of the pin"], ["image_url", "http://fpoimg.com/255x170"], ["created_at", "2020-10-05 10:56:53.913988"], ["updated_at", "2020-10-05 10:56:53.913988"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "image_url" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["image_url", "http://fpoimg.com/250x250?text=Medium Rectangle"], ["updated_at", "2020-10-05 10:56:53.915925"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+PinTest: test_updated_at_is_changed_after_updating_title
+--------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title of the pin"], ["created_at", "2020-10-05 10:56:53.918597"], ["updated_at", "2020-10-05 10:56:53.918597"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "title" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["title", "new title of the pin"], ["updated_at", "2020-10-05 10:56:53.920137"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PinTest: test_one_matching_result_from_search
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title of the pin"], ["created_at", "2020-10-05 10:56:53.922499"], ["updated_at", "2020-10-05 10:56:53.922499"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%title%') OR (tag LIKE '%title%'))[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+PinTest: test_the_first_empty_Pin_created_is_first_in_the_list
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "first pin"], ["created_at", "2020-10-05 10:56:53.927663"], ["updated_at", "2020-10-05 10:56:53.927663"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Second pin"], ["created_at", "2020-10-05 10:56:53.929295"], ["updated_at", "2020-10-05 10:56:53.929295"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+PinTest: test_updated_at_is_changed_after_updating_tag
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title of the pin"], ["tag", "tags for the pin"], ["created_at", "2020-10-05 10:56:53.932210"], ["updated_at", "2020-10-05 10:56:53.932210"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "pins" SET "tag" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["tag", "new tags for the pin"], ["updated_at", "2020-10-05 10:56:53.934269"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+PinTest: test_two_matching_results
+----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title1 for the pin"], ["created_at", "2020-10-05 10:58:51.768170"], ["updated_at", "2020-10-05 10:58:51.768170"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title2 for the pin"], ["created_at", "2020-10-05 10:58:51.770540"], ["updated_at", "2020-10-05 10:58:51.770540"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%title%') OR (tag LIKE '%title%'))[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+PinTest: test_updated_at_is_changed_after_updating_tag
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title of the pin"], ["tag", "tags for the pin"], ["created_at", "2020-10-05 10:58:51.776333"], ["updated_at", "2020-10-05 10:58:51.776333"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "tag" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["tag", "new tags for the pin"], ["updated_at", "2020-10-05 10:58:51.778114"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+PinTest: test_the_first_empty_Pin_created_is_first_in_the_list
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "first pin"], ["created_at", "2020-10-05 10:58:51.781090"], ["updated_at", "2020-10-05 10:58:51.781090"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Second pin"], ["created_at", "2020-10-05 10:58:51.783715"], ["updated_at", "2020-10-05 10:58:51.783715"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+PinTest: test_changing_the_title
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title of the pin"], ["created_at", "2020-10-05 10:58:51.787095"], ["updated_at", "2020-10-05 10:58:51.787095"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "title" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["title", "new title of the pin"], ["updated_at", "2020-10-05 10:58:51.788665"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PinTest: test_one_matching_result_from_search
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title of the pin"], ["created_at", "2020-10-05 10:58:51.791018"], ["updated_at", "2020-10-05 10:58:51.791018"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%title%') OR (tag LIKE '%title%'))[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+PinTest: test_updated_at_is_changed_after_updating_image_url
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title of the pin"], ["image_url", "http://fpoimg.com/255x170"], ["created_at", "2020-10-05 10:58:51.794190"], ["updated_at", "2020-10-05 10:58:51.794190"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "image_url" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["image_url", "http://fpoimg.com/250x250?text=Medium Rectangle"], ["updated_at", "2020-10-05 10:58:51.795727"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+PinTest: test_no_matching_results
+---------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title for the pin"], ["created_at", "2020-10-05 10:58:51.798038"], ["updated_at", "2020-10-05 10:58:51.798038"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" WHERE ((title LIKE '%newtitle%') OR (tag LIKE '%newtitle%')) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+PinTest: test_updated_at_is_changed_after_updating_title
+--------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title of the pin"], ["created_at", "2020-10-05 10:58:51.805510"], ["updated_at", "2020-10-05 10:58:51.805510"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "title" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["title", "new title of the pin"], ["updated_at", "2020-10-05 10:58:51.807475"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m

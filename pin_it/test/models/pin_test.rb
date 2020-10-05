@@ -55,4 +55,28 @@ class PinTest < ActiveSupport::TestCase
     refute_equal(pin.updated_at, first_updated_at)
   end
 
+  test 'one matching result from search' do
+    pin = Pin.new title: 'title of the pin'
+    pin.save!
+
+    assert_equal Pin.search('title').length, 1
+  end
+
+  test 'no matching results' do
+    pin1 = Pin.new title: 'title for the pin'
+    pin1.save!
+
+    assert_empty Pin.search('newtitle')
+  end
+
+  test 'two matching results' do
+    pin1 = Pin.new title: 'title1 for the pin'
+    pin1.save!
+
+    pin2 = Pin.new title: 'title2 for the pin'
+    pin2.save!
+
+    assert_equal Pin.search('title').length, 2
+  end
+
 end
