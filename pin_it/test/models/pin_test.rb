@@ -136,4 +136,10 @@ class PinTest < ActiveSupport::TestCase
     refute pin.valid?
   end
 
+  test 'maximum lenght of the tag' do
+    pin = Pin.new title: 'title of the pin',
+                    tag: 'this tag has more than thirty characters in it.'
+    refute pin.valid?
+  end
+
 end
