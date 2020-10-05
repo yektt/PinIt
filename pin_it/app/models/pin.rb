@@ -1,5 +1,8 @@
 class Pin < ApplicationRecord
 
+  validates :title, presence: true
+  validates :tag, length: { maximum: 30 }
+
   def self.most_recent()
     all.order(created_at: :desc).limit(6)
   end
