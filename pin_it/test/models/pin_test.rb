@@ -45,4 +45,14 @@ class PinTest < ActiveSupport::TestCase
     refute_equal(pin.updated_at, first_updated_at)
   end
 
+  test 'updated_at is changed after updating image_url' do
+    pin = Pin.new title: 'title of the pin',
+                    image_url: 'http://fpoimg.com/255x170'
+    pin.save!
+    first_updated_at = pin.updated_at
+    pin.image_url = 'http://fpoimg.com/250x250?text=Medium Rectangle'
+    pin.save!
+    refute_equal(pin.updated_at, first_updated_at)
+  end
+
 end
