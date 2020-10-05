@@ -6,12 +6,10 @@ class CommentTest < ActiveSupport::TestCase
     pin = Pin.new title: 'coffee with friends'
     pin.save!
 
-    comment1 = Comment.new body: "I'd like to come with you", 
-                           pin: pin,
-                           user: User.new
+    comment1 = Comment.new body: "I'd like to come with you", pin: pin
     comment1.save
 
-    pin2 = Pin.new  title: 'tea with friends'
+    pin2 = Pin.new title: 'tea with friends'
     pin2.save
 
     comment1.pin = pin2
@@ -24,9 +22,7 @@ class CommentTest < ActiveSupport::TestCase
     pin = Pin.new title: 'coffee with friends'
     pin.save!
     
-    comment1 = Comment.new body: "I'd like to come with you", 
-                           pin: pin,
-                           user: User.new
+    comment1 = Comment.new body: "I will try this!"
     pin.comments << comment1
     pin.save!
 
@@ -37,11 +33,8 @@ class CommentTest < ActiveSupport::TestCase
     pin = Pin.new title: 'coffee with friends'
     pin.save!
 
-    comment1 = Comment.new body: "I'd like to come with you",
-                           user: User.new
-
-    comment2 = Comment.new body: "I agree! I'd like to do this as well", 
-                           user: User.new
+    comment1 = Comment.new body: "This would be great fun"
+    comment2 = Comment.new body: "I agree! I'd like to do this as well"
 
     pin.comments << comment1
     pin.comments << comment2
