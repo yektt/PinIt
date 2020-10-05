@@ -131,4 +131,9 @@ class PinTest < ActiveSupport::TestCase
     assert_equal Pin.search('title2').length, 2
   end
 
+  test 'presence of the title' do
+    pin = Pin.new
+    refute pin.valid?
+  end
+
 end
