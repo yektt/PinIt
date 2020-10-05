@@ -13,10 +13,11 @@ class PinsController < ApplicationController
   end
 
   def new
+    @pin = Pin.new
   end
 
   def create
-    pin = Pin.new(pins_params)
+    pin = Pin.new(pins_resource_params)
     pin.save!
     redirect_to pins_path
   end
@@ -33,13 +34,13 @@ class PinsController < ApplicationController
 
   def update
     pin = Pin.find(params[:id])
-    pin.update(pins_params)
+    pin.update(pins_resource_params)
     redirect_to account_pins_path
   end
 
   private
 
-  def pins_params
-    params.permit(:title, :tag, :image_url)
+  def pins_resource_params
+    params.require(:pin).permit(:title, :tag, :image_url)
   end
 end
