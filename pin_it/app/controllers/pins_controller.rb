@@ -28,6 +28,7 @@ class PinsController < ApplicationController
   def show
     id = params[:id]
     @pin = Pin.find(id)
+    @comment = Comment.new
   end
 
   def edit
