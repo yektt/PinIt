@@ -79,4 +79,29 @@ class PinTest < ActiveSupport::TestCase
     assert_equal Pin.search('title').length, 2
   end
 
+  test 'most_recent with no Pin' do
+    assert_empty Pin.most_recent()
+  end
+
+  test 'most_recent with two Pins' do
+    pin_1 = Pin.new title: 'title1 for the pin'
+    pin_1.save!
+
+    pin_2 = Pin.new title: 'title2 for the pin'
+    pin_2.save!
+
+    assert_equal Pin.most_recent().length, 2
+    assert_equal Pin.most_recent.first, pin_2
+  end
+
+  test 'most_recent with eight Pins' do
+    8.times do |i|
+      pin = Pin.new title: "title#{i+1} for the pin"
+      pin.save!
+    end
+
+    assert_equal Pin.most_recent().length, 6
+    assert_equal Pin.most_recent.first.title, "title8 for the pin"
+  end
+
 end
