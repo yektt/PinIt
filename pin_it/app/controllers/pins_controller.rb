@@ -36,9 +36,12 @@ class PinsController < ApplicationController
   end
 
   def update
-    pin = Pin.find(params[:id])
-    pin.update(pins_resource_params)
-    redirect_to account_pins_path
+    @pin = Pin.find(params[:id])
+    if(@pin.update(pins_resource_params))
+      redirect_to account_pins_path
+    else
+      render 'edit'
+    end
   end
 
   private
