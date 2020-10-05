@@ -14,4 +14,15 @@ class PinTest < ActiveSupport::TestCase
     refute_equal pin.updated_at, updated_at
   end
 
+  test 'the first empty Pin created is first in the list' do
+    first_pin = Pin.new title: 'first pin'
+    first_pin.save!
+
+    second_pin = Pin.new title: 'Second pin'
+    second_pin.save!
+
+    assert_equal(first_pin, Pin.all.first)
+  end
+
+
 end
