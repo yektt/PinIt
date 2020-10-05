@@ -104,4 +104,31 @@ class PinTest < ActiveSupport::TestCase
     assert_equal Pin.most_recent.first.title, "title8 for the pin"
   end
 
+  test 'search with title' do
+    pin = Pin.new title: 'title for the pin'
+    pin.save!
+
+    assert_equal Pin.search('title').length, 1
+  end  
+  
+  test 'search with tag' do
+    pin = Pin.new title: 'title for the pin',
+                  tag: 'tags for the pin'
+    pin.save!
+
+    assert_equal Pin.search('tag').length, 1
+  end  
+
+  test 'search with tag and title' do
+    pin1 = Pin.new title: 'title1 for the pin',
+                   tag: 'I am helping to title2'
+    pin1.save!
+
+    pin2 = Pin.new title: 'title2 for the pin',
+                   tag: 'I am helping to title1'
+    pin2.save!
+    
+    assert_equal Pin.search('title2').length, 2
+  end
+
 end
