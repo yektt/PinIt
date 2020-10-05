@@ -60,9 +60,12 @@
     </ul>
   </div>
   <div class="container mb-5 d-flex flex-column">
-    <h2>Add comment</h2>
-    <textarea class="form-control mt-3" placeholder="Write your comment..."></textarea>
-    <%= render(partial: 'primary_button', locals: { label: 'Add Comment' }) %>
+    
+    <%= form_for([@pin, @comment], html: {class:'form-group mt-5'}) do |form| %>
+      <%= form.label(:body, 'Add a comment', class:'h2') %>
+      <%= form.text_area(:body, class:'form-control mt-3', placeholder:'Add your comment...') %>
+      <%= form.submit('Post', class:'btn btn-lg btn-primary btn-block mt-3') %>
+    <% end %>
   </div>
 </main>
 
