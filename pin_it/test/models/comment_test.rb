@@ -29,4 +29,19 @@ class CommentTest < ActiveSupport::TestCase
     assert_equal comment1, Comment.first
   end 
 
+  test 'Comments are ordered correctly' do
+    pin = Pin.new title: 'coffee with friends'
+    pin.save!
+
+    comment1 = Comment.new body: "This would be great fun"
+    comment2 = Comment.new body: "I agree! I'd like to do this as well"
+
+    pin.comments << comment1
+    pin.comments << comment2
+    pin.save!
+    
+    assert_equal comment1, pin.comments.first
+    assert_equal pin.comments.count, 2
+  end
+
 end
