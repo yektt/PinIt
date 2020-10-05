@@ -17,9 +17,12 @@ class PinsController < ApplicationController
   end
 
   def create
-    pin = Pin.new(pins_resource_params)
-    pin.save!
-    redirect_to pins_path
+    @pin = Pin.new(pins_resource_params)
+    if (@pin.save)
+      redirect_to pins_path
+    else
+      render 'new'
+    end
   end
 
   def show
