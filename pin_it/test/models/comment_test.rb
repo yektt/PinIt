@@ -18,4 +18,15 @@ class CommentTest < ActiveSupport::TestCase
     refute_equal pin, comment1.pin
   end
 
+  test 'cascading save' do
+    pin = Pin.new title: 'coffee with friends'
+    pin.save!
+    
+    comment1 = Comment.new body: "I will try this!"
+    pin.comments << comment1
+    pin.save!
+
+    assert_equal comment1, Comment.first
+  end 
+
 end
