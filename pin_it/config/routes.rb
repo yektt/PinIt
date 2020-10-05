@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  resources :pins
+  resources :pins do
+   resources :comments
+  end
 
   get 'account/pins'
 
