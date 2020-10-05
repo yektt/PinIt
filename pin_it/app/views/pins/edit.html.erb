@@ -2,13 +2,13 @@
    <div class="container mt-5">
      <h1>Edit pin</h1>
      
-     <%= form_tag(pin_path(@pin), method:'PATCH', class: 'form-group mt-5') do %>
-      <label for="title" class="sr-only">Title</label>
-      <%= text_field_tag('title', @pin.title, class:'form-control', placeholder:'Title here') %>
-      <label for="tag" class="sr-only">Tag</label>
-      <%= text_field_tag('tag', @pin.tag, class:'form-control mt-3', placeholder: 'Tags here') %>
-      <label for="image_url" class="sr-only">Title</label>
-      <%= text_field_tag('image_url', @pin.image_url, class:'form-control mt-3', placeholder: 'Image URL here') %>
+     <%= form_for(@pin, html: {class:'form-group mt-5'}) do |form| %>
+      <%= form.label(:title, class:'sr-only') %>
+      <%= form.text_field(:title, class:'form-control', placeholder:'Title here') %>
+      <%= form.label(:tag, class:'sr-only') %>
+      <%= form.text_field(:tag, class:'form-control mt-3', placeholder: 'Tags here') %>
+      <%= form.label(:image_url, class:'sr-only') %>
+      <%= form.text_field(:image_url, class:'form-control mt-3', placeholder: 'Image URL here') %>
       <%= button_tag('Update Pin', class: 'btn btn-lg btn-primary btn-block mt-5') %>
     <% end %>
    </div>
