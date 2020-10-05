@@ -2049,3 +2049,988 @@ PinTest: test_search_with_tag_and_title
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%title2%') OR (tag LIKE '%title2%'))[0m
   [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+PinsTest: test_create_new_pin
+-----------------------------
+Started GET "/pins/new" for 127.0.0.1 at 2020-10-05 14:47:21 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/new.html.erb within layouts/application (2.2ms)
+  Rendered application/_nav_item.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+Completed 200 OK in 238ms (Views: 233.4ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application-d344d35d43b647e676b1559a0d58f7ab9296c21dbb8c39e98f0440823bcc0746.css" for 127.0.0.1 at 2020-10-05 14:47:21 +0200
+Started POST "/pins" for 127.0.0.1 at 2020-10-05 14:47:22 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "title"=>"Finish all mangas", "tag"=>"manga all mangas read", "image_url"=>"http://fpoimg.com/255x170", "button"=>""}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------
+PinsTest: test_editing_a_pin
+----------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title"], ["created_at", "2020-10-05 12:47:22.789251"], ["updated_at", "2020-10-05 12:47:22.789251"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pins/1/edit" for 127.0.0.1 at 2020-10-05 14:47:22 +0200
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pins/edit.html.erb within layouts/application
+  Rendered pins/edit.html.erb within layouts/application (12.8ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PinsTest: test_home_page_highlights
+-----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 1"], ["created_at", "2020-10-05 12:47:25.077322"], ["updated_at", "2020-10-05 12:47:25.077322"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 2"], ["created_at", "2020-10-05 12:47:25.079043"], ["updated_at", "2020-10-05 12:47:25.079043"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 3"], ["created_at", "2020-10-05 12:47:25.080456"], ["updated_at", "2020-10-05 12:47:25.080456"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 4"], ["created_at", "2020-10-05 12:47:25.081795"], ["updated_at", "2020-10-05 12:47:25.081795"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 5"], ["created_at", "2020-10-05 12:47:25.082841"], ["updated_at", "2020-10-05 12:47:25.082841"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 6"], ["created_at", "2020-10-05 12:47:25.083614"], ["updated_at", "2020-10-05 12:47:25.083614"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 7"], ["created_at", "2020-10-05 12:47:25.084326"], ["updated_at", "2020-10-05 12:47:25.084326"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-10-05 14:47:25 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.9ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.6ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  Rendered home/index.html.erb within layouts/application (6.8ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+PinsTest: test_index_loads_pins
+-------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Learn how to draw anime characters"], ["created_at", "2020-10-05 12:47:27.537650"], ["updated_at", "2020-10-05 12:47:27.537650"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Start writing a little anime"], ["created_at", "2020-10-05 12:47:27.538808"], ["updated_at", "2020-10-05 12:47:27.538808"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pins" for 127.0.0.1 at 2020-10-05 14:47:27 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.8ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  Rendered pins/index.html.erb within layouts/application (5.2ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------
+PinsTest: test_search
+---------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Do something with clay"], ["created_at", "2020-10-05 12:47:27.702815"], ["updated_at", "2020-10-05 12:47:27.702815"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Finish Witcher III again"], ["created_at", "2020-10-05 12:47:27.704003"], ["updated_at", "2020-10-05 12:47:27.704003"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-10-05 14:47:27 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_search_form.html.erb (0.2ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+Started GET "/pins?utf8=%E2%9C%93&q=with&button=" for 127.0.0.1 at 2020-10-05 14:47:27 +0200
+Processing by PinsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"with", "button"=>""}
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" WHERE ((title LIKE '%with%') OR (tag LIKE '%with%')) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%with%') OR (tag LIKE '%with%'))[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  Rendered pins/index.html.erb within layouts/application (1.6ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+PinsTest: test_no_search_results
+--------------------------------
+Started GET "/pins" for 127.0.0.1 at 2020-10-05 14:47:29 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered pins/index.html.erb within layouts/application (0.5ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+PinsTest: test_search_by_description_and_title
+----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Buy a new phone"], ["tag", "iphone samsung android ios"], ["created_at", "2020-10-05 12:47:30.103296"], ["updated_at", "2020-10-05 12:47:30.103296"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Make camp"], ["tag", "camp sunset sunrise lake"], ["created_at", "2020-10-05 12:47:30.104551"], ["updated_at", "2020-10-05 12:47:30.104551"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Swim in the lake Leman"], ["tag", "swim evian lausanne"], ["created_at", "2020-10-05 12:47:30.105747"], ["updated_at", "2020-10-05 12:47:30.105747"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-10-05 14:47:30 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+Started GET "/pins?utf8=%E2%9C%93&q=lake&button=" for 127.0.0.1 at 2020-10-05 14:47:30 +0200
+Processing by PinsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"lake", "button"=>""}
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" WHERE ((title LIKE '%lake%') OR (tag LIKE '%lake%')) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%lake%') OR (tag LIKE '%lake%'))[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  Rendered pins/index.html.erb within layouts/application (1.9ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+PinsTest: test_no_search_results
+--------------------------------
+Started GET "/pins" for 127.0.0.1 at 2020-10-05 15:00:49 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered pins/index.html.erb within layouts/application (4.4ms)
+  Rendered application/_nav_item.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.5ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 188ms (Views: 180.1ms | ActiveRecord: 0.4ms)
+Started GET "/assets/application-d344d35d43b647e676b1559a0d58f7ab9296c21dbb8c39e98f0440823bcc0746.css" for 127.0.0.1 at 2020-10-05 15:00:49 +0200
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+PinsTest: test_search_by_description_and_title
+----------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Buy a new phone"], ["tag", "iphone samsung android ios"], ["created_at", "2020-10-05 13:00:49.917283"], ["updated_at", "2020-10-05 13:00:49.917283"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Make camp"], ["tag", "camp sunset sunrise lake"], ["created_at", "2020-10-05 13:00:49.919584"], ["updated_at", "2020-10-05 13:00:49.919584"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Swim in the lake Leman"], ["tag", "swim evian lausanne"], ["created_at", "2020-10-05 13:00:49.920660"], ["updated_at", "2020-10-05 13:00:49.920660"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-10-05 15:00:49 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (2.8ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  Rendered home/index.html.erb within layouts/application (7.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.2ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.5ms)
+Started GET "/pins?utf8=%E2%9C%93&q=lake&button=" for 127.0.0.1 at 2020-10-05 15:00:50 +0200
+Processing by PinsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"lake", "button"=>""}
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" WHERE ((title LIKE '%lake%') OR (tag LIKE '%lake%')) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%lake%') OR (tag LIKE '%lake%'))[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  Rendered pins/index.html.erb within layouts/application (2.4ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.2ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+PinsTest: test_index_loads_pins
+-------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Learn how to draw anime characters"], ["created_at", "2020-10-05 13:00:52.288031"], ["updated_at", "2020-10-05 13:00:52.288031"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Start writing a little anime"], ["created_at", "2020-10-05 13:00:52.289133"], ["updated_at", "2020-10-05 13:00:52.289133"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pins" for 127.0.0.1 at 2020-10-05 15:00:52 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  Rendered pins/index.html.erb within layouts/application (1.6ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------
+PinsTest: test_search
+---------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Do something with clay"], ["created_at", "2020-10-05 13:00:52.462253"], ["updated_at", "2020-10-05 13:00:52.462253"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Finish Witcher III again"], ["created_at", "2020-10-05 13:00:52.463333"], ["updated_at", "2020-10-05 13:00:52.463333"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-10-05 15:00:52 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+Started GET "/pins?utf8=%E2%9C%93&q=with&button=" for 127.0.0.1 at 2020-10-05 15:00:52 +0200
+Processing by PinsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"with", "button"=>""}
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" WHERE ((title LIKE '%with%') OR (tag LIKE '%with%')) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%with%') OR (tag LIKE '%with%'))[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  Rendered pins/index.html.erb within layouts/application (1.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PinsTest: test_home_page_highlights
+-----------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 1"], ["created_at", "2020-10-05 13:00:54.734183"], ["updated_at", "2020-10-05 13:00:54.734183"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 2"], ["created_at", "2020-10-05 13:00:54.736170"], ["updated_at", "2020-10-05 13:00:54.736170"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 3"], ["created_at", "2020-10-05 13:00:54.737893"], ["updated_at", "2020-10-05 13:00:54.737893"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 4"], ["created_at", "2020-10-05 13:00:54.739812"], ["updated_at", "2020-10-05 13:00:54.739812"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 5"], ["created_at", "2020-10-05 13:00:54.741309"], ["updated_at", "2020-10-05 13:00:54.741309"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 6"], ["created_at", "2020-10-05 13:00:54.742539"], ["updated_at", "2020-10-05 13:00:54.742539"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 7"], ["created_at", "2020-10-05 13:00:54.743814"], ["updated_at", "2020-10-05 13:00:54.743814"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-10-05 15:00:54 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.9ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.8ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+PinsTest: test_create_new_pin
+-----------------------------
+Started GET "/pins/new" for 127.0.0.1 at 2020-10-05 15:00:57 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/_form.html.erb (10.4ms)
+  Rendered pins/new.html.erb within layouts/application (11.5ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------
+PinsTest: test_editing_a_pin
+----------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title"], ["created_at", "2020-10-05 13:00:59.481302"], ["updated_at", "2020-10-05 13:00:59.481302"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pins/1/edit" for 127.0.0.1 at 2020-10-05 15:00:59 +0200
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pins/edit.html.erb within layouts/application
+  Rendered pins/_form.html.erb (1.3ms)
+  Rendered pins/edit.html.erb within layouts/application (1.8ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_search_form.html.erb (0.2ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+Started PATCH "/pins/1" for 127.0.0.1 at 2020-10-05 15:00:59 +0200
+Processing by PinsController#update as HTML
+  Parameters: {"utf8"=>"✓", "pin"=>{"title"=>"new pin title", "tag"=>"tags of the pin", "image_url"=>""}, "commit"=>"Update Pin", "id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "title" = ?, "tag" = ?, "image_url" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["title", "new pin title"], ["tag", "tags of the pin"], ["image_url", ""], ["updated_at", "2020-10-05 13:00:59.650610"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:64175/account/pins
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/account/pins" for 127.0.0.1 at 2020-10-05 15:00:59 +0200
+Processing by AccountController#pins as HTML
+  Rendering account/pins.html.erb within layouts/application
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  Rendered account/pins.html.erb within layouts/application (1.7ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms)
+Started GET "/pins/1" for 127.0.0.1 at 2020-10-05 15:00:59 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pins/show.html.erb within layouts/application
+  Rendered pins/_primary_button.html.erb (0.3ms)
+  Rendered pins/show.html.erb within layouts/application (1.5ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------
+PinsTest: test_editing_a_pin
+----------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title"], ["created_at", "2020-10-05 13:04:14.344808"], ["updated_at", "2020-10-05 13:04:14.344808"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pins/1/edit" for 127.0.0.1 at 2020-10-05 15:04:16 +0200
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pins/edit.html.erb within layouts/application
+  Rendered pins/_form.html.erb (28.6ms)
+  Rendered pins/edit.html.erb within layouts/application (30.6ms)
+  Rendered application/_nav_item.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 205ms (Views: 195.4ms | ActiveRecord: 0.2ms)
+Started GET "/assets/application-d344d35d43b647e676b1559a0d58f7ab9296c21dbb8c39e98f0440823bcc0746.css" for 127.0.0.1 at 2020-10-05 15:04:17 +0200
+Started PATCH "/pins/1" for 127.0.0.1 at 2020-10-05 15:04:17 +0200
+Processing by PinsController#update as HTML
+  Parameters: {"utf8"=>"✓", "pin"=>{"title"=>"new pin title", "tag"=>"tags of the pin", "image_url"=>""}, "commit"=>"Update Pin", "id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "title" = ?, "tag" = ?, "image_url" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["title", "new pin title"], ["tag", "tags of the pin"], ["image_url", ""], ["updated_at", "2020-10-05 13:04:17.308901"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:64433/account/pins
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/account/pins" for 127.0.0.1 at 2020-10-05 15:04:17 +0200
+Processing by AccountController#pins as HTML
+  Rendering account/pins.html.erb within layouts/application
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.8ms)
+  Rendered account/pins.html.erb within layouts/application (2.9ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+Started GET "/pins/1" for 127.0.0.1 at 2020-10-05 15:04:17 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pins/show.html.erb within layouts/application
+  Rendered pins/_primary_button.html.erb (0.3ms)
+  Rendered pins/show.html.erb within layouts/application (1.6ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+PinsTest: test_create_new_pin
+-----------------------------
+Started GET "/pins/new" for 127.0.0.1 at 2020-10-05 15:04:17 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/_form.html.erb (1.1ms)
+  Rendered pins/new.html.erb within layouts/application (1.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+Started POST "/pins" for 127.0.0.1 at 2020-10-05 15:04:17 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "pin"=>{"title"=>"Finish all mangas", "tag"=>"manga all mangas read", "image_url"=>"http://fpoimg.com/255x170"}, "commit"=>"Create Pin"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Finish all mangas"], ["tag", "manga all mangas read"], ["image_url", "http://fpoimg.com/255x170"], ["created_at", "2020-10-05 13:04:17.844233"], ["updated_at", "2020-10-05 13:04:17.844233"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:64433/pins
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/pins" for 127.0.0.1 at 2020-10-05 15:04:17 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  Rendered pins/index.html.erb within layouts/application (3.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_search_form.html.erb (0.2ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.2ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+PinsTest: test_no_search_results
+--------------------------------
+Started GET "/pins" for 127.0.0.1 at 2020-10-05 15:04:17 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered pins/index.html.erb within layouts/application (0.5ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+PinsTest: test_search_by_description_and_title
+----------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Buy a new phone"], ["tag", "iphone samsung android ios"], ["created_at", "2020-10-05 13:04:18.062966"], ["updated_at", "2020-10-05 13:04:18.062966"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Make camp"], ["tag", "camp sunset sunrise lake"], ["created_at", "2020-10-05 13:04:18.064457"], ["updated_at", "2020-10-05 13:04:18.064457"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Swim in the lake Leman"], ["tag", "swim evian lausanne"], ["created_at", "2020-10-05 13:04:18.065332"], ["updated_at", "2020-10-05 13:04:18.065332"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-10-05 15:04:18 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.6ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+Started GET "/pins?utf8=%E2%9C%93&q=lake&button=" for 127.0.0.1 at 2020-10-05 15:04:18 +0200
+Processing by PinsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"lake", "button"=>""}
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" WHERE ((title LIKE '%lake%') OR (tag LIKE '%lake%')) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%lake%') OR (tag LIKE '%lake%'))[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  Rendered pins/index.html.erb within layouts/application (1.9ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PinsTest: test_home_page_highlights
+-----------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 1"], ["created_at", "2020-10-05 13:04:20.361053"], ["updated_at", "2020-10-05 13:04:20.361053"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 2"], ["created_at", "2020-10-05 13:04:20.362024"], ["updated_at", "2020-10-05 13:04:20.362024"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 3"], ["created_at", "2020-10-05 13:04:20.362667"], ["updated_at", "2020-10-05 13:04:20.362667"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 4"], ["created_at", "2020-10-05 13:04:20.363295"], ["updated_at", "2020-10-05 13:04:20.363295"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 5"], ["created_at", "2020-10-05 13:04:20.363924"], ["updated_at", "2020-10-05 13:04:20.363924"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 6"], ["created_at", "2020-10-05 13:04:20.364589"], ["updated_at", "2020-10-05 13:04:20.364589"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "pin title 7"], ["created_at", "2020-10-05 13:04:20.366019"], ["updated_at", "2020-10-05 13:04:20.366019"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-10-05 15:04:20 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.5ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  Rendered home/index.html.erb within layouts/application (3.6ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+PinsTest: test_index_loads_pins
+-------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Learn how to draw anime characters"], ["created_at", "2020-10-05 13:04:22.810523"], ["updated_at", "2020-10-05 13:04:22.810523"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Start writing a little anime"], ["created_at", "2020-10-05 13:04:22.811472"], ["updated_at", "2020-10-05 13:04:22.811472"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pins" for 127.0.0.1 at 2020-10-05 15:04:22 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.6ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  Rendered pins/index.html.erb within layouts/application (2.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.2ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------
+PinsTest: test_search
+---------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Do something with clay"], ["created_at", "2020-10-05 13:04:22.972092"], ["updated_at", "2020-10-05 13:04:22.972092"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Finish Witcher III again"], ["created_at", "2020-10-05 13:04:22.973450"], ["updated_at", "2020-10-05 13:04:22.973450"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-10-05 15:04:22 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.3ms)
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.2ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+Started GET "/pins?utf8=%E2%9C%93&q=with&button=" for 127.0.0.1 at 2020-10-05 15:04:23 +0200
+Processing by PinsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"with", "button"=>""}
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" WHERE ((title LIKE '%with%') OR (tag LIKE '%with%')) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%with%') OR (tag LIKE '%with%'))[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.4ms)
+  Rendered pins/index.html.erb within layouts/application (1.9ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.6ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+PinTest: test_two_matching_results
+----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title1 for the pin"], ["created_at", "2020-10-05 13:04:41.761221"], ["updated_at", "2020-10-05 13:04:41.761221"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title2 for the pin"], ["created_at", "2020-10-05 13:04:41.762455"], ["updated_at", "2020-10-05 13:04:41.762455"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%title%') OR (tag LIKE '%title%'))[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PinTest: test_one_matching_result_from_search
+---------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title of the pin"], ["created_at", "2020-10-05 13:04:41.765851"], ["updated_at", "2020-10-05 13:04:41.765851"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%title%') OR (tag LIKE '%title%'))[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+PinTest: test_most_recent_with_two_Pins
+---------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title1 for the pin"], ["created_at", "2020-10-05 13:04:41.768000"], ["updated_at", "2020-10-05 13:04:41.768000"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title2 for the pin"], ["created_at", "2020-10-05 13:04:41.768894"], ["updated_at", "2020-10-05 13:04:41.768894"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+PinTest: test_the_first_empty_Pin_created_is_first_in_the_list
+--------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "first pin"], ["created_at", "2020-10-05 13:04:41.770819"], ["updated_at", "2020-10-05 13:04:41.770819"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Second pin"], ["created_at", "2020-10-05 13:04:41.771621"], ["updated_at", "2020-10-05 13:04:41.771621"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+PinTest: test_search_with_tag_and_title
+---------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title1 for the pin"], ["tag", "I am helping to title2"], ["created_at", "2020-10-05 13:04:41.773233"], ["updated_at", "2020-10-05 13:04:41.773233"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title2 for the pin"], ["tag", "I am helping to title1"], ["created_at", "2020-10-05 13:04:41.774425"], ["updated_at", "2020-10-05 13:04:41.774425"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%title2%') OR (tag LIKE '%title2%'))[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+PinTest: test_updated_at_is_changed_after_updating_image_url
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title of the pin"], ["image_url", "http://fpoimg.com/255x170"], ["created_at", "2020-10-05 13:04:41.777061"], ["updated_at", "2020-10-05 13:04:41.777061"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "image_url" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["image_url", "http://fpoimg.com/250x250?text=Medium Rectangle"], ["updated_at", "2020-10-05 13:04:41.778175"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+PinTest: test_no_matching_results
+---------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title for the pin"], ["created_at", "2020-10-05 13:04:41.779800"], ["updated_at", "2020-10-05 13:04:41.779800"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" WHERE ((title LIKE '%newtitle%') OR (tag LIKE '%newtitle%')) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PinTest: test_most_recent_with_eight_Pins
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title1 for the pin"], ["created_at", "2020-10-05 13:04:41.782968"], ["updated_at", "2020-10-05 13:04:41.782968"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title2 for the pin"], ["created_at", "2020-10-05 13:04:41.784016"], ["updated_at", "2020-10-05 13:04:41.784016"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title3 for the pin"], ["created_at", "2020-10-05 13:04:41.784828"], ["updated_at", "2020-10-05 13:04:41.784828"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title4 for the pin"], ["created_at", "2020-10-05 13:04:41.785506"], ["updated_at", "2020-10-05 13:04:41.785506"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title5 for the pin"], ["created_at", "2020-10-05 13:04:41.786275"], ["updated_at", "2020-10-05 13:04:41.786275"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title6 for the pin"], ["created_at", "2020-10-05 13:04:41.787119"], ["updated_at", "2020-10-05 13:04:41.787119"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title7 for the pin"], ["created_at", "2020-10-05 13:04:41.788084"], ["updated_at", "2020-10-05 13:04:41.788084"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title8 for the pin"], ["created_at", "2020-10-05 13:04:41.789487"], ["updated_at", "2020-10-05 13:04:41.789487"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+PinTest: test_updated_at_is_changed_after_updating_tag
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title of the pin"], ["tag", "tags for the pin"], ["created_at", "2020-10-05 13:04:41.792185"], ["updated_at", "2020-10-05 13:04:41.792185"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "tag" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["tag", "new tags for the pin"], ["updated_at", "2020-10-05 13:04:41.793909"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+PinTest: test_search_with_title
+-------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title for the pin"], ["created_at", "2020-10-05 13:04:41.796213"], ["updated_at", "2020-10-05 13:04:41.796213"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%title%') OR (tag LIKE '%title%'))[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+PinTest: test_updated_at_is_changed_after_updating_title
+--------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title of the pin"], ["created_at", "2020-10-05 13:04:41.798408"], ["updated_at", "2020-10-05 13:04:41.798408"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "title" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["title", "new title of the pin"], ["updated_at", "2020-10-05 13:04:41.799391"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+PinTest: test_most_recent_with_no_Pin
+-------------------------------------
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+PinTest: test_changing_the_title
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "title of the pin"], ["created_at", "2020-10-05 13:04:41.801975"], ["updated_at", "2020-10-05 13:04:41.801975"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "pins" SET "title" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["title", "new title of the pin"], ["updated_at", "2020-10-05 13:04:41.803462"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+PinTest: test_search_with_tag
+-----------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title for the pin"], ["tag", "tags for the pin"], ["created_at", "2020-10-05 13:04:41.805611"], ["updated_at", "2020-10-05 13:04:41.805611"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE ((title LIKE '%tag%') OR (tag LIKE '%tag%'))[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m

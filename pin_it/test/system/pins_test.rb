@@ -4,9 +4,9 @@ class PinsTest < ApplicationSystemTestCase
 
   test "create new pin" do
     visit (new_pin_path)
-    fill_in('title', with: 'Finish all mangas')
-    fill_in('tag', with:'manga all mangas read')
-    fill_in('image_url', with: 'http://fpoimg.com/255x170')
+    fill_in('Title', with: 'Finish all mangas')
+    fill_in('Tag', with:'manga all mangas read')
+    fill_in('Image url', with: 'http://fpoimg.com/255x170')
     click_on ('Create Pin')
     assert page.has_content?('Finish all mangas')
   end
@@ -29,8 +29,8 @@ class PinsTest < ApplicationSystemTestCase
     pin = Pin.new title: 'pin title'
     pin.save!
     visit(edit_pin_path(pin))
-    fill_in('tag', with:'tags of the pin')
-    fill_in('title', with:'new pin title')
+    fill_in('Tag', with:'tags of the pin')
+    fill_in('Title', with:'new pin title')
   
     click_on('Update Pin')
     click_on('new pin title')
