@@ -32,9 +32,17 @@ class PinTest < ActiveSupport::TestCase
 
     pin.title = 'new title of the pin'
     pin.save!
-    
+
     refute_equal(pin.updated_at, first_updated_at)
   end
 
+  test 'updated_at is changed after updating tag' do
+    pin = Pin.new title:'title of the pin', tag: 'tags for the pin'
+    pin.save!
+    first_updated_at = pin.updated_at 
+    pin.tag = 'new tags for the pin'
+    pin.save!
+    refute_equal(pin.updated_at, first_updated_at)
+  end
 
 end
