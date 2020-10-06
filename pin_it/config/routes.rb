@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  resources :users
+  
   resources :pins do
    resources :comments
   end
@@ -12,11 +14,8 @@ Rails.application.routes.draw do
   
   get 'home/index'
 
-  get 'user/new'
+  get 'users/log_in'
 
-  get 'user/log_in'
-
-  get 'user/register'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
