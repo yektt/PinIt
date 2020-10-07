@@ -15,9 +15,7 @@
             <ul class="navbar-nav mr-auto">
               <%= render(partial:'nav_item', locals:{ footer: false, title:'Home', uri: root_path }) %>
               <%= render(partial:'nav_item', locals:{ footer: false, title:'Log in', uri: new_user_path }) %>
-              <% if (@user.present? && @user.id != nil) %>
-                <%= render(partial:'nav_item', locals:{ footer: false, title:'My Pins', uri: account_pins_path}) %>
-              <% end %>
+              <%= render(partial:'nav_item', locals:{ footer: false, title:'My Pins', uri: account_pins_path}) %>
             </ul>
             <%= render(partial: 'search_form') %>
           </div>
