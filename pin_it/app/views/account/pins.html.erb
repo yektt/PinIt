@@ -5,9 +5,9 @@
         <h1 class="p-5">My Pins</h1>
         <%= link_to('New Pin', new_pin_path , class:'btn btn-primary') %>
       </div>
-      <div class="container">
+      <div class="container md-5">
         <% if (@pins.present?) %>
-          <ul class="row mt-5"> 
+          <ul class="row mt-5 md-5"> 
             <% @pins.each do |pin|%>
               <li class="list-unstyled col-md-4 col-sm-6">
                 <div class="col mb-4">
