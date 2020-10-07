@@ -18,6 +18,7 @@
               <% if(@disabled_account_path != false) %>
                 <%= render(partial:'nav_item', locals:{ footer: false, title:'My Pins', uri: account_pins_path}) %>
               <% end %>
+              <%= render(partial:'nav_item', locals:{ footer: false, title:'About', uri: home_about_path }) %>
             </ul>
             <%= render(partial: 'search_form') %>
           </div>
@@ -34,7 +35,6 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <%= render(partial:'nav_item', locals:{ footer: true, title:'Home', uri: root_path }) %>
-              <%= render(partial:'nav_item', locals:{ footer: true, title:'About', uri: home_about_path }) %>
             </ul>
             <a class="text-right text-muted">Built by Yekta Turan</a>
           </div>
