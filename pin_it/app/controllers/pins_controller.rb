@@ -30,6 +30,13 @@ class PinsController < ApplicationController
     @comment = Comment.new
 
     @display_add_comment = session[:user_id].present?
+
+    if(session[:user_id].present?)
+      @user = User.find(session[:user_id])
+    else
+      @user = nil
+    end 
+
   end
 
   def edit
