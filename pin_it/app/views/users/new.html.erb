@@ -1,0 +1,10 @@
+<main>
+  <section class="container mt-5">
+    <%=form_for(@user, class:'form-group') do |form| %>
+      <h1 class="h3 mb-3 font-weight-normal mt-5">Please login</h1>
+      <%= form.label(:email, class:'sr-only') %>
+      <%= form.text_field(:email, class:'form-control mt-5', placeholder:'Email address') %>
+      <%= form.submit('Log in', class:'btn btn-lg btn-primary btn-block mt-5') %>
+    <% end %>
+  </section>
+</main>

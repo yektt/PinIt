@@ -3,6 +3,8 @@ class Pin < ApplicationRecord
   validates :title, presence: true
   validates :tag, length: { maximum: 30 }
 
+  belongs_to :user
+
   has_many :comments
 
   def self.most_recent()

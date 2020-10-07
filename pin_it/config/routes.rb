@@ -10,12 +10,9 @@ Rails.application.routes.draw do
 
   get 'account/pins'
 
-  get 'application/about'
+  get 'home/about'
   
   get 'home/index'
-
-  get 'users/log_in'
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

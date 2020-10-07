@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
-  
   test 'changing the associated pin for a comment' do
     pin = Pin.new title: 'coffee with friends'
     pin.save!
@@ -43,5 +42,4 @@ class CommentTest < ActiveSupport::TestCase
     assert_equal comment1, pin.comments.first
     assert_equal pin.comments.count, 2
   end
-
 end
