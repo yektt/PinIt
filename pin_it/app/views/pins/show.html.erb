@@ -36,7 +36,14 @@
         <hr class="featurette-divider mt-5">
         <% @pin.comments.each do |comment| %>
           <li class="d-flex">
-            <div class="p-2 d-flex flex-column">
+            <div class="col-md-2">
+            <% if (User.find(comment.user_id).image_url == nil) %>
+              <%= image_tag('avatar.png', class:'img-thumbnail') %>
+            <% else %>
+              <%= image_tag(User.find(comment.user_id).image_url, class:'img-thumbnail w-100') %>
+            <% end %>
+            </div>
+            <div class="p-2 d-flex w-100 flex-column">
               <a href="#" class="">
                 <h5 class="font-weight-normal">
                 <% if(User.find(comment.user_id).name_surname) %>
