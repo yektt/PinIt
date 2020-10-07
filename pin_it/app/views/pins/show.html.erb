@@ -11,7 +11,12 @@
           <div class="col-md-6">
             <div class="d-flex justify-content-between align-items-baseline">
               <%= link_to('Edit', edit_pin_path(@pin) , class:'btn btn-primary') %>
-              <a href="#" class="btn btn-primary">Favorite</a>
+              <% if(@user.present?) %>
+                <%= form_tag(user_goals_path(@user)) do %>
+                  <%= hidden_field_tag('pin_id', @pin.id)%>
+                    <%= button_tag('Favorite', class:'btn btn-primary', type:'submit') %>                
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>
