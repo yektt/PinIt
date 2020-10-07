@@ -8089,3 +8089,21 @@ Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.5ms)
             FROM sqlite_temp_master
             WHERE name='index_pins_on_user_id' AND type='index'
 [0m
+Started GET "/pins/2" for ::1 at 2020-10-07 14:42:45 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.7ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pins/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."pin_id" = ?[0m  [["pin_id", 2]]
+  Rendered pins/show.html.erb within layouts/application (16.5ms)
+  Rendered application/_nav_item.html.erb (0.9ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_search_form.html.erb (1.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+Completed 200 OK in 135ms (Views: 45.6ms | ActiveRecord: 8.0ms)
+
+
