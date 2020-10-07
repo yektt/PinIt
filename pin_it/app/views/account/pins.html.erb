@@ -7,6 +7,7 @@
 
     <div class="container">
       <ul class="row mt-5">
+      <% if(@pins.present?) %>
         <% @pins.each do |pin|%>
           <li class="list-unstyled col-md-4 col-sm-6">
             <div class="col mb-4">
@@ -14,6 +15,9 @@
             </div>
           </li>
         <% end %>
+      <% else %>
+        <h2 class="container">No favorite found!</h2>
+      <% end %>
       </ul>
     </div>
 </main>

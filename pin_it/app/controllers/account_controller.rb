@@ -1,5 +1,6 @@
 class AccountController < ApplicationController
   def pins
-    @pins = Pin.all
+    @user = User.find(session[:user_id])
+    @pins = @user.goals
   end
 end
