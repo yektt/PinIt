@@ -1,23 +1,27 @@
 <main>
-  <div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center">
-      <h1 class="p-5">My Pins</h1>
-      <%= link_to('New Pin', new_pin_path , class:'btn btn-primary') %>
-    </div>
-
-    <div class="container">
-      <ul class="row mt-5">
-      <% if(@pins.present?) %>
-        <% @pins.each do |pin|%>
-          <li class="list-unstyled col-md-4 col-sm-6">
-            <div class="col mb-4">
-              <%= render(partial: 'pin_card', locals:{ pin: pin }) %>
-            </div>
-          </li>
+  <% if(@user.present?) %>
+    <div class="container mt-5">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="p-5">My Pins</h1>
+        <%= link_to('New Pin', new_pin_path , class:'btn btn-primary') %>
+      </div>
+      <div class="container">
+        <% if (@pins.present?) %>
+          <ul class="row mt-5"> 
+            <% @pins.each do |pin|%>
+              <li class="list-unstyled col-md-4 col-sm-6">
+                <div class="col mb-4">
+                  <%= render(partial: 'pin_card', locals:{ pin: pin }) %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <h2 class="container mb-5 pl-4">No favorite found!</h2>
         <% end %>
-      <% else %>
-        <h2 class="container">No favorite found!</h2>
-      <% end %>
-      </ul>
+      </div>
     </div>
+  <% else %>
+    <h2 class="container mt-5 mb-5">Please log in first!</h2>
+  <% end %> 
 </main>
