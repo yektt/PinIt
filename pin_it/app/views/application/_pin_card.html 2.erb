@@ -1,0 +1,13 @@
+<div class="card">
+  <%= link_to(pin_path(Pin.find(pin.id))) do %>
+    <% if(pin.image_url.nil? || pin.image_url == "") %>
+      <img src="http://fpoimg.com/255x170" class="card-img-top" alt="...">
+    <% else %>
+      <img src="<%= pin.image_url %>" class="card-img-top" alt="...">
+    <% end %>
+  <div class="card-body text-dark">
+    <h5 class="card-title"><%= pin.title %></h5>
+    <p class="card-text"><%= pin.tag%></p>
+  </div>
+  <% end %>
+</div>

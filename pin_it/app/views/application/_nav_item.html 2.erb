@@ -1,0 +1,5 @@
+<% if( current_page?(uri) && footer == false ) %> 
+  <li class="nav-item active"> <%= link_to( title , uri, class:'nav-link') %> </li>
+<% else %>
+  <li class="nav-item"> <%= link_to( title , uri, class:'nav-link') %> </li>
+<% end %>
