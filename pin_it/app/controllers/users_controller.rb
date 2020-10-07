@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    if (session[:user_id] == nil)
+      @disabled_account_path = false
+    end
   end
   
   def create

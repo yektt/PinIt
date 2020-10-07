@@ -1,5 +1,9 @@
 class PinsController < ApplicationController
   def index
+    if (session[:user_id] == nil)
+      @disabled_account_path = false
+    end
+
     if (params[:q].nil? || params[:q].empty?)
       @search_term = "everything"
       @pins = Pin.all
@@ -30,13 +34,17 @@ class PinsController < ApplicationController
     @comment = Comment.new
 
     @display_add_comment = session[:user_id].present?
-
+   
     if(session[:user_id].present?)
       @user = User.find(session[:user_id])
       @disable_add_favorite = @user.goals.exists?(@pin.id)
     else
       @user = nil
     end 
+
+    if (session[:user_id] == nil)
+      @disabled_account_path = false
+    end
 
   end
 
