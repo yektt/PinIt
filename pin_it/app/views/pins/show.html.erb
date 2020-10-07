@@ -14,7 +14,7 @@
               <% if(@user.present?) %>
                 <%= form_tag(user_goals_path(@user)) do %>
                   <%= hidden_field_tag('pin_id', @pin.id)%>
-                    <%= button_tag('Favorite', class:'btn btn-primary', type:'submit') %>                
+                    <%= button_tag('Favorite', class:'btn btn-primary', type:'submit', disabled: @disable_add_favorite) %>                
                 <% end %>
               <% end %>
             </div>
