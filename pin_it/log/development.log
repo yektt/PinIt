@@ -26610,3 +26610,401 @@ Completed 200 OK in 202ms (Views: 188.5ms | ActiveRecord: 0.5ms)
 
 
   [1m[36mPin Load (0.8ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2020-10-08 13:57:01 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  Rendered application/_nav_item.html.erb (0.5ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_search_form.html.erb (0.6ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-08 14:26:59 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 1244ms (Views: 1232.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-10-08 14:27:02 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (9.0ms)
+  Rendered application/_nav_item.html.erb (0.7ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.6ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 490ms (Views: 480.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2020-10-08 14:27:05 +0200
+Processing by HomeController#about as HTML
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (0.7ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 545ms (Views: 543.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-08 14:27:06 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 459ms (Views: 457.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-10-08 14:27:07 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 447ms (Views: 445.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-10-08 14:27:10 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MS2qh1FjpEDudyWQ76980kVDINulmIK8rq4gl+7Q2mVEJ5WG7rrv3jpteXcN+YvM7tCFUOKL2VbWFJRkePQZqw==", "user"=>{"email"=>"test@mail"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@mail"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email") VALUES (?, ?, ?)[0m  [["created_at", "2020-10-08 12:27:10.653710"], ["updated_at", "2020-10-08 12:27:10.653710"], ["email", "test@mail"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pins
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2020-10-08 14:27:10 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered pins/index.html.erb within layouts/application (1.8ms)
+  Rendered application/_nav_item.html.erb (0.6ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.5ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 452ms (Views: 451.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-08 14:27:13 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 530ms (Views: 528.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2020-10-08 14:27:15 +0200
+Processing by HomeController#about as HTML
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (0.3ms)
+  Rendered application/_nav_item.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 450ms (Views: 449.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account/pins" for 127.0.0.1 at 2020-10-08 14:27:16 +0200
+Processing by AccountController#pins as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering account/pins.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" INNER JOIN "pins_users" ON "pins"."id" = "pins_users"."pin_id" WHERE "pins_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered account/pins.html.erb within layouts/application (9.5ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 471ms (Views: 458.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pins?utf8=%E2%9C%93&q=&button=" for 127.0.0.1 at 2020-10-08 14:27:19 +0200
+Processing by PinsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"", "button"=>""}
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered pins/index.html.erb within layouts/application (0.9ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 458ms (Views: 456.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/account/pins" for 127.0.0.1 at 2020-10-08 14:27:20 +0200
+Processing by AccountController#pins as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering account/pins.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" INNER JOIN "pins_users" ON "pins"."id" = "pins_users"."pin_id" WHERE "pins_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered account/pins.html.erb within layouts/application (1.5ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 469ms (Views: 467.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2020-10-08 14:27:21 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/_form.html.erb (2.4ms)
+  Rendered pins/new.html.erb within layouts/application (3.4ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 466ms (Views: 460.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2020-10-08 14:27:32 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4itpSwXWRDiKyZUAv4/nWxdMgbTJykn9ga9PKH80k+N9mb4shTzRfe3ia9P1Y5v27Aa7ZtC+miKShfM06sThSw==", "pin"=>{"title"=>"cross stitch", "tag"=>"cross stitch hand-made", "image_url"=>""}, "commit"=>"Create Pin"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pins" ("title", "tag", "image_url", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "cross stitch"], ["tag", "cross stitch hand-made"], ["image_url", ""], ["created_at", "2020-10-08 12:27:32.088588"], ["updated_at", "2020-10-08 12:27:32.088588"], ["user_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pins
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2020-10-08 14:27:32 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (1.0ms)
+  Rendered pins/index.html.erb within layouts/application (3.3ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 455ms (Views: 454.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2020-10-08 14:27:34 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" INNER JOIN "pins_users" ON "pins"."id" = "pins_users"."pin_id" WHERE "pins_users"."user_id" = ? AND "pins"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering pins/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."pin_id" = ?[0m  [["pin_id", 1]]
+  Rendered pins/show.html.erb within layouts/application (5.0ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 459ms (Views: 449.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/1/goals" for 127.0.0.1 at 2020-10-08 14:27:38 +0200
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GDVc/Cls590ZSWskhGVlMtmj8Hk7eIBNnXt4TVaen8yVcGq4nLtgtYFWpg3dstijOJc+ArJ6vRAKL73EJAeVNg==", "pin_id"=>"1", "button"=>"", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins_users" ("pin_id", "user_id") VALUES (?, ?)[0m  [["pin_id", 1], ["user_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pins/1
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2020-10-08 14:27:38 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" INNER JOIN "pins_users" ON "pins"."id" = "pins_users"."pin_id" WHERE "pins_users"."user_id" = ? AND "pins"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering pins/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."pin_id" = ?[0m  [["pin_id", 1]]
+  Rendered pins/show.html.erb within layouts/application (3.0ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 475ms (Views: 471.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/account/pins" for 127.0.0.1 at 2020-10-08 14:27:40 +0200
+Processing by AccountController#pins as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering account/pins.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" INNER JOIN "pins_users" ON "pins"."id" = "pins_users"."pin_id" WHERE "pins_users"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.9ms)
+  Rendered account/pins.html.erb within layouts/application (3.3ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 459ms (Views: 457.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-08 14:27:43 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (0.9ms)
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 462ms (Views: 460.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-10-08 14:27:45 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+  Rendered application/_nav_item.html.erb (0.7ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 460ms (Views: 458.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account/pins" for 127.0.0.1 at 2020-10-08 14:27:46 +0200
+Processing by AccountController#pins as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering account/pins.html.erb within layouts/application
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins" INNER JOIN "pins_users" ON "pins"."id" = "pins_users"."pin_id" WHERE "pins_users"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (1.5ms)
+  Rendered account/pins.html.erb within layouts/application (5.4ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 527ms (Views: 524.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2020-10-08 14:27:47 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" INNER JOIN "pins_users" ON "pins"."id" = "pins_users"."pin_id" WHERE "pins_users"."user_id" = ? AND "pins"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering pins/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."pin_id" = ?[0m  [["pin_id", 1]]
+  Rendered pins/show.html.erb within layouts/application (2.8ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 439ms (Views: 435.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/pins/1/comments" for 127.0.0.1 at 2020-10-08 14:27:56 +0200
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FYZ+rLYEvjvYy3zse5tBgPhUJazqc0SgXHFP43gf7ymukmncv41rDcTKBmeV5lC2hMVIshhAdKajveYOMRU/bg==", "comment"=>{"body"=>"cross stitch"}, "commit"=>"Post", "pin_id"=>"1"}
+id
+1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("body", "created_at", "updated_at", "pin_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "cross stitch"], ["created_at", "2020-10-08 12:27:56.707861"], ["updated_at", "2020-10-08 12:27:56.707861"], ["pin_id", 1], ["user_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pins/1
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2020-10-08 14:27:56 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "pins" INNER JOIN "pins_users" ON "pins"."id" = "pins_users"."pin_id" WHERE "pins_users"."user_id" = ? AND "pins"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering pins/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."pin_id" = ?[0m  [["pin_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pins/show.html.erb within layouts/application (5.1ms)
+  Rendered application/_nav_item.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.1ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.4ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 485ms (Views: 482.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-08 14:28:01 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."created_at" DESC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_pin_card.html.erb (1.1ms)
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+  Rendered application/_nav_item.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+  Rendered application/_search_form.html.erb (0.3ms)
+  Rendered application/_nav_item.html.erb (0.0ms)
+Completed 200 OK in 429ms (Views: 427.5ms | ActiveRecord: 0.4ms)
+
+

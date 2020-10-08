@@ -19,11 +19,11 @@ class CommentTest < ActiveSupport::TestCase
 
   test 'cascading save' do
     pin = Pin.new title: 'coffee with friends', user: User.new
-    pin.save!
+    pin.save
     
     comment1 = Comment.new body: "I will try this!", user: User.new
     pin.comments << comment1
-    pin.save!
+    pin.save
 
     assert_equal comment1, Comment.first
   end 
@@ -37,7 +37,7 @@ class CommentTest < ActiveSupport::TestCase
 
     pin.comments << comment1
     pin.comments << comment2
-    pin.save!
+    pin.save
     
     assert_equal comment1, pin.comments.first
     assert_equal pin.comments.count, 2
