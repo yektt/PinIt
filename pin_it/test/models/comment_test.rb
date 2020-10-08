@@ -2,13 +2,13 @@ require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
   test 'changing the associated pin for a comment' do
-    pin = Pin.new title: 'coffee with friends'
+    pin = Pin.new title: 'coffee with friends', user: User.new
     pin.save!
 
     comment1 = Comment.new body: "I'd like to come with you", pin: pin
     comment1.save
 
-    pin2 = Pin.new title: 'tea with friends'
+    pin2 = Pin.new title: 'tea with friends', user: User.new
     pin2.save
 
     comment1.pin = pin2
@@ -18,10 +18,10 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   test 'cascading save' do
-    pin = Pin.new title: 'coffee with friends'
+    pin = Pin.new title: 'coffee with friends', user: User.new
     pin.save!
     
-    comment1 = Comment.new body: "I will try this!"
+    comment1 = Comment.new body: "I will try this!", user: User.new
     pin.comments << comment1
     pin.save!
 
@@ -29,11 +29,11 @@ class CommentTest < ActiveSupport::TestCase
   end 
 
   test 'Comments are ordered correctly' do
-    pin = Pin.new title: 'coffee with friends'
+    pin = Pin.new title: 'coffee with friends', user: User.new
     pin.save!
 
-    comment1 = Comment.new body: "This would be great fun"
-    comment2 = Comment.new body: "I agree! I'd like to do this as well"
+    comment1 = Comment.new body: "This would be great fun", user: User.new
+    comment2 = Comment.new body: "I agree! I'd like to do this as well", user: User.new
 
     pin.comments << comment1
     pin.comments << comment2
