@@ -1,6 +1,7 @@
 require "application_system_test_case"
 
 class PinCommentsTest < ApplicationSystemTestCase
+  
   test 'adding a comment to an pin' do
     user = User.new email: 'test@mail'
     user.save!
@@ -13,8 +14,6 @@ class PinCommentsTest < ApplicationSystemTestCase
     click_on('Log in', match: :first)
 
     click_on('Home', match: :first)
-
-    sleep(5.second)
     click_on('title')
     fill_in('Add a comment', with: 'comment')
     click_on('Post', match: :first)

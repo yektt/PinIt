@@ -4,6 +4,5 @@ class AccountController < ApplicationController
       @user = User.find(session[:user_id])
       @pins = @user.goals
     end
-    
   end
 end

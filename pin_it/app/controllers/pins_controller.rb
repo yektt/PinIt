@@ -13,6 +13,24 @@ class PinsController < ApplicationController
     end
   end
 
+  def show
+    id = params[:id]
+    @pin = Pin.find(id)
+    @comment = Comment.new
+    @display_add_comment = session[:user_id].present?
+   
+    if(session[:user_id].present?)
+      @user = User.find(session[:user_id])
+      @disable_add_favorite = @user.goals.exists?(@pin.id)
+    else
+      @user = nil
+    end 
+
+    if (session[:user_id] == nil)
+      @disabled_account_path = false
+    end
+  end
+
   def new
     @pin = Pin.new
   end
@@ -26,26 +44,6 @@ class PinsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def show
-    id = params[:id]
-    @pin = Pin.find(id)
-    @comment = Comment.new
-
-    @display_add_comment = session[:user_id].present?
-   
-    if(session[:user_id].present?)
-      @user = User.find(session[:user_id])
-      @disable_add_favorite = @user.goals.exists?(@pin.id)
-    else
-      @user = nil
-    end 
-
-    if (session[:user_id] == nil)
-      @disabled_account_path = false
-    end
-
   end
 
   def edit
@@ -68,3 +66,4 @@ class PinsController < ApplicationController
     params.require(:pin).permit(:title, :tag, :image_url)
   end
 end
+

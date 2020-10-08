@@ -5,7 +5,7 @@ class ShowPinsTest < ApplicationSystemTestCase
     pin = Pin.new title: 'Adopt a dog',
                     tag: 'adoptation saves lives',
                     user: User.new
-    pin.save!
+    pin.save
 
     visit(pin_path(pin))
     assert page.has_content?('Adopt a dog'.upcase)

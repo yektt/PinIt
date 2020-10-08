@@ -5,7 +5,7 @@
       <div class="w-100 d-inline-flex p-2 d-flex flex-column">
         <h2 class="featurette-heading p-2 mb-auto"><%= @pin.title.upcase %></h2>
         <p class="lead p-2 mb-auto"><%= @pin.tag %></p>
-        <p class="card-text p-2 mb-auto">Created by <%= User.find(@pin.user_id).name_surname %></p>
+        <p class="card-text p-2 mb-auto">Created by <%= User.find(@pin.user_id).name %></p>
         <p class="card-text p-2 mb-auto">Created on <time datetime="2017-08-27T03:48"><%= @pin.created_at.strftime("%d %b '%y")%></time></p>
         <div>
           <div class="col-md-6">
@@ -46,8 +46,8 @@
             <div class="p-2 d-flex w-100 flex-column">
               <a href="#" class="">
                 <h5 class="font-weight-normal">
-                <% if(User.find(comment.user_id).name_surname) %>
-                  <%= User.find(comment.user_id).name_surname %>
+                <% if(User.find(comment.user_id).name) %>
+                  <%= User.find(comment.user_id).name %>
                 <% else %>
                   Unknown
                 <% end %>
@@ -62,16 +62,14 @@
     <% end %>
   </div>
 
-  
-    <div class="container mb-5 d-flex flex-column">
-    <% if (@display_add_comment) %>
-      <%= form_for([@pin, @comment], html: {class:'form-group mt-5'}) do |form| %>
-        <%= form.label(:body, 'Add a comment', class:'h2') %>
-        <%= form.text_area(:body, class:'form-control mt-3', placeholder:'Add your comment...') %>
-        <%= form.submit('Post', class:'btn btn-lg btn-primary btn-block mt-3') %>
-      <% end %>
-     <% end %>
-    </div>
- 
+  <div class="container mb-5 d-flex flex-column">
+  <% if (@display_add_comment) %>
+    <%= form_for([@pin, @comment], html: {class:'form-group mt-5'}) do |form| %>
+      <%= form.label(:body, 'Add a comment', class:'h2') %>
+      <%= form.text_area(:body, class:'form-control mt-3', placeholder:'Add your comment...') %>
+      <%= form.submit('Post', class:'btn btn-lg btn-primary btn-block mt-3') %>
+    <% end %>
+    <% end %>
+  </div>
 </main>
 

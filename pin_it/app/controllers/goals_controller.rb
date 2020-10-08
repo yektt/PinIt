@@ -7,5 +7,4 @@ class GoalsController < ApplicationController
 
     redirect_to pin_path(pin)
   end
-
 end
